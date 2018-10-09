@@ -5,8 +5,8 @@
       <b-navbar-brand href="#">@monica.kwon</b-navbar-brand>
       <b-collapse is-nav id="nav_collapse">
         <b-navbar-nav>
-          <b-nav-item href="#"><router-link to="/kanban">Board <i class="fa fa-th-large" aria-hidden="true"></i></router-link></b-nav-item>
-          <b-nav-item href="#"><router-link to="/backlog">Backlog <i class="fa fa-list" aria-hidden="true"></i></router-link></b-nav-item>
+          <b-nav-item href="#"><nuxt-link to="/kanban">Board <i class="fa fa-th-large" aria-hidden="true"></i></nuxt-link></b-nav-item>
+          <b-nav-item href="#"><nuxt-link to="/backlog">Backlog <i class="fa fa-list" aria-hidden="true"></i></nuxt-link></b-nav-item>
         </b-navbar-nav>
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto">

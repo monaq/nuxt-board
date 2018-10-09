@@ -2,7 +2,7 @@
     <div class="add-item">
         <form action="#" method="post" v-on:submit.prevent="submitForm">
             <input type="text" v-model="itemText" placeholder="추가사항을 적어주세요">
-            <button type=""></button>
+            <button type="submit">뭐이자식이?</button>
         </form>
     </div>
 </template>

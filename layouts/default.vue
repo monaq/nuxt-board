@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import Header from '../components/Navbar/Header.vue'
-import Nav from '../components/Navbar/Nav.vue'
+import Header from '@/components/Navbar/Header.vue'
+import Nav from '@/components/Navbar/Nav.vue'
 
 export default {
   components: {

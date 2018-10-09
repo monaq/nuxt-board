@@ -1,6 +1,5 @@
 <template>
   <div id="Backlog" class="backlog-view">
-    <button>뭐이자식이?</button>
     <NewItemForm />
     <div class="card" v-for="item in items" :key="item.id">
         <div class="card-block">
