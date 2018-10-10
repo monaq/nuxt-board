@@ -1,5 +1,5 @@
 <template>
-  <div class="board">
+  <div class="kanban">
     <div class="row">
         <div class="col-md">
           <Task id="todo" title="Todo" :items="todoItems"></Task>

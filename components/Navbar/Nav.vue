@@ -2,11 +2,11 @@
   <div id="Nav">
     <b-navbar toggleable="md" type="dark" variant="info">
       <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
-      <b-navbar-brand href="#">@monica.kwon</b-navbar-brand>
+      <b-navbar-brand href="/">Home</b-navbar-brand>
       <b-collapse is-nav id="nav_collapse">
         <b-navbar-nav>
-          <b-nav-item href="#"><nuxt-link to="/kanban">Board <i class="fa fa-th-large" aria-hidden="true"></i></nuxt-link></b-nav-item>
-          <b-nav-item href="#"><nuxt-link to="/backlog">Backlog <i class="fa fa-list" aria-hidden="true"></i></nuxt-link></b-nav-item>
+          <nuxt-link to="/kanban" class="navLink">Board <i class="fa fa-th-large"></i></nuxt-link>
+          <nuxt-link to="/backlog" class="navLink">Backlog <i class="fa fa-list"></i></nuxt-link>
         </b-navbar-nav>
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto">
@@ -23,9 +23,16 @@
 <script>
 export default {
   name: "Nav",
-  computed: {}
-  // props: {
-  //   msg: String
-  // }
+  data() {
+    return {
+    }
+  }
 };
 </script>
+
+<style scoped>
+  .navLink {
+    color: whitesmoke;
+    margin: 0 0.5em
+  }
+</style>

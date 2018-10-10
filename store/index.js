@@ -13,6 +13,7 @@ const store = () => new Vuex.Store({
   mutations: {
     addItem(state, item) {
       state.items.todo.push(Object.assign(item, { id: state.nextId }));
+      console.log(state.items.todo)
       state.nextId += 1;
     },
     updateItems(state, { items, id }) {

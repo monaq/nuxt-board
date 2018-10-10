@@ -1,10 +1,10 @@
 <template>
-  <div id="Backlog" class="backlog-view">
+  <div id="Backlog" class="container">
     <NewItemForm />
     <div class="card" v-for="item in items" :key="item.id">
         <div class="card-block">
           <h5 class="card-title"><span class="text-muted">#{{item.id}}</span>
-          {{item.text}} <span :class="badgeClass(item)">{{badgeText(item)}}</span></h5>
+          {{item.text}} <b-badge :variant="badgeClass(item)">{{badgeText(item)}}</b-badge></h5>
         </div>
     </div>
   </div>
@@ -17,15 +17,15 @@ import NewItemForm from './NewItemForm'
 const badges = {
   todo: {
     text: 'todo',
-    class: 'badge badge-light'
+    class: 'primary'
   },
   doing: {
     text: 'doing',
-    class: 'badge badge-info'
+    class: 'success'
   },
   done: {
     text: 'done',
-    class: 'badge badge-success'
+    class: 'secondary'
   }
 }
 
@@ -44,7 +44,6 @@ export default {
       } else if (this.$store.state.items.doing.includes(item)) {
         return 'doing'
       }
-
       return 'done'
     },
     badgeText(item) {
