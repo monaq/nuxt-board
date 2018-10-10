@@ -1,29 +1,29 @@
 <template>
   <div class="board">
     <div class="row">
-        <!-- <div class="col-md">
-          <taskLane id="todo" title="Todo" :items="todoItems"></taskLane>
+        <div class="col-md">
+          <Task id="todo" title="Todo" :items="todoItems"></Task>
         </div>
         <div class="col-md">
-          <taskLane id="inProgress" title="In progress" :items="inProgressItems"></taskLane>
+          <Task id="doing" title="Doing" :items="doingItems"></Task>
         </div>
         <div class="col-md">
-          <taskLane id="done" title="Done" :items="doneItems"></taskLane>
-        </div> -->
+          <Task id="done" title="Done" :items="doneItems"></Task>
+        </div>
     </div>
   </div>
 </template>
 
 <script>
 import { mapState } from 'vuex'
-// import TaskLane from '../components/Tasks/TaskLane'
+import Task from '../components/Tasks/Task'
 export default {
-  // components: {
-  //   'taskLane': TaskLane
-  // },
+  components: {
+    'Task': Task
+  },
   computed: mapState({
     todoItems: s => s.items.todo,
-    inProgressItems: s => s.items.inProgress,
+    doingItems: s => s.items.doing,
     doneItems: s => s.items.done
   })
 };
