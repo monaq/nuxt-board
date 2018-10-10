@@ -49,4 +49,5 @@ export default {
 .card-body > * {
   min-height: 50px;
 }
+
 </style>
