@@ -14,6 +14,10 @@ export default {
   components: {
     Header,
     Nav
+  },
+  created() {
+    this.$store.commit("getItem")
+    this.$store.commit("initItem" )
   }
 }
 </script>

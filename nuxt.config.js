@@ -20,10 +20,17 @@ module.exports = {
   modules: [
     'bootstrap-vue/nuxt'
   ],
+  /**
+   * plugins
+   */
+  plugins: [
+    {src: '~/plugins/persistedstate', ssr: false},
+  ],
   /*
   ** Build configuration
   */
   build: {
+    vendor: ['vuex-persistedstate'],
     /*
     ** Run ESLint on save
     */

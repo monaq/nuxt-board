@@ -14,16 +14,25 @@
   <li>주간업무에 기록되는 업무는 jira에 다 등록되어 있어야 합니다.</li>
 </ul>
 
-주간보고 작성법 <a href="http://wiki.daumkakao.com/pages/viewpage.action?pageId=441695319">Wiki</a></p>
+주간보고 작성법 <a href="http://wiki.daumkakao.com/pages/viewpage.action?pageId=441695319">Wiki</a>
     <b-alert show variant="success">
       <h4 class="alert-heading">사용전에</h4>
       <ul>
-        <li>모든 task는 사용자의 localstorage에 저장되므로 개별적으로 관리 하시기 바랍니다.</li>
+        <li>모든 task는 사용자의 쿠키에 저장되므로 개별적으로 관리 하시기 바랍니다.</li>
         <li>지난주 task를 복사 붙여넣기 하시면 이전 히스토리를 덮어씁니다. >2차 오픈 개봉박두.</li>
       </ul>
     </b-alert>
     <div id="weeklyResult">
       <h4>이번주 주간보고</h4>
+      <br>
+      <h5>------issue</h5>
+
+      <h5>------done</h5>
+      <p v-for="(item, index) in done" v-bind:key="index">{{ item.text }} </p>
+      <h5>------doing</h5>
+      <p v-for="(item, index) in doing" v-bind:key="index">{{ item.text }} </p>
+      <h5>------done</h5>
+      <p v-for="(item, index) in todo"  v-bind:key="index">{{ item.text }} </p>
     </div>
   </div>
 </template>
@@ -32,7 +41,25 @@
 
 export default {
   name: "Kanban",
+  props: ['temp'],
+  data() { return {
+    prevItems: {},
+    doing: {},
+    done: {},
+    todo: {},
+    issue: ''
+  }},
+  mounted() {
+    if(this.$store.state.temp) {
+      this.prevItems = JSON.parse(this.$store.state.temp)
+
+      this.doing =this.prevItems.doing
+      this.todo =this.prevItems.todo
+      this.done =this.prevItems.done
+    }
+  },
   computed: {
+
   }
   // props: {
   //   msg: String
