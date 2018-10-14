@@ -3,7 +3,7 @@
       <h3 class="card-header">{{ title }}</h3>
       <div class="card-body">
         <draggable v-model="draggables" :options="{ group: 'default' }">
-          <div v-for="item in items" :key="item.id">
+          <div v-for="(item, index) in items" :key="index">
               <item :item="item"></item>
           </div>
         </draggable>
