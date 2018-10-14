@@ -1,24 +1,17 @@
 <template>
-  <div class="card task-lane-item">
+  <b-alert show variant="info">
     <div class="card-block">
-        <h5 class="card-title">
-            <span class="text-muted">#{{item.id}}</span>
-            {{item.text}}
-        </h5>
+       {{item.text}}
     </div>
-  </div>
+  </b-alert>
 </template>
 
 <script>
-export default {
-  props: ['item'],
-};
+  export default {
+    props: ['item'],
+  };
 </script>
 
 <style>
-.card.task-lane-item {
-  background: #627180;
-  color: whitesmoke;
-  margin: 0.5em 0;
-}
+
 </style>

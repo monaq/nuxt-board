@@ -1,7 +1,7 @@
 <template>
   <div id="Backlog" class="container">
     <NewItemForm />
-    <div class="card" v-for="item in items" :key="item.id">
+    <div class="card" v-for="(item, index) in items" :key="index">
         <div class="card-block">
           <h5 class="card-title"><span class="text-muted">#{{item.id}}</span>
           {{item.text}} <b-badge :variant="badgeClass(item)">{{badgeText(item)}}</b-badge></h5>
