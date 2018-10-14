@@ -3,9 +3,9 @@
     <NewItemForm />
     <div class="card" v-for="(item, index) in items" :key="index">
         <div class="card-block">
-          <h5 class="card-title"><span class="text-muted">#{{item.id}}</span>
-          {{item.text}} <b-badge :variant="badgeClass(item)">{{badgeText(item)}}</b-badge></h5>
+          {{item.text}} <b-badge pill :variant="badgeClass(item)">{{badgeText(item)}}</b-badge>
         </div>
+        <span><b-badge variant="dark" @click="deleteItem(badgeText(item), item.id)">delete</b-badge></span>
     </div>
   </div>
 </template>
@@ -53,6 +53,9 @@ export default {
     badgeClass(item) {
       const lane = this.itemLane(item)
       return badges[lane].class
+    },
+    deleteItem(itemLane, id) {
+      this.$store.commit('deleteItem', { itemLane, id })
     }
   }
 };
@@ -67,5 +70,11 @@ export default {
   }
   .card-block {
     padding: 15px;
+  }
+  .badge-dark {
+    position: absolute;
+    right: 1em;
+    top: 33%;
+    cursor: pointer;
   }
 </style>

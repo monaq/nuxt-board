@@ -1,6 +1,6 @@
 <template>
     <div class="add-item">
-      <b-btn v-b-modal.taskModal>Task 추가하기</b-btn>
+      <b-btn variant="primary" v-b-modal.taskModal>Task 추가하기</b-btn>
       <b-modal id="taskModal"
               ref="modal"
               title="Add Task"
@@ -8,9 +8,9 @@
               @shown="clearName"
             >
         <form @submit.stop.prevent="submitForm">
-            <!-- <b-form-select v-model="companySelected" :options="company" class="mb-3" />
+            <b-form-select v-model="companySelected" :options="company" class="mb-3" />
             <b-form-select v-if="companySelected" v-model="categorySelected" :options="category[companySelected]" class="mb-3" />
-            <b-form-select v-if="categorySelected" v-model="serviceSelected" :options="services[companySelected].categorySelected" class="mb-3" />   -->
+            <b-form-select v-if="categorySelected" v-model="serviceSelected" :options="services[companySelected].categorySelected" class="mb-3" />
             <b-form-input type="text" v-model="itemCoworker" placeholder="함께 작업한 사람이 있으면 적어주세요."></b-form-input>
             <b-form-input type="text" v-model="itemJiraNum" placeholder="Jira Number"></b-form-input>
             <label>기간</label><rangeDate id="" @submit="onDateSelected" @selected="onDateSelected" format="YYYY-MM-DD" compact="false" i18n="EN"></rangeDate>
@@ -92,3 +92,8 @@ export default {
   }
 };
 </script>
+<style lang="css" scoped>
+  .btn-primary {
+    margin: 0.5em 0
+  }
+</style>

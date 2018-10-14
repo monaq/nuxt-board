@@ -26,6 +26,15 @@ const store = () => new Vuex.Store({
       state.temp = updated
       Cookies.set('wk', state.temp)
     },
+    deleteItem(state, {itemLane, id}) {
+      console.log(itemLane, id)
+      const target = state.items[itemLane].find(item => item.id == id)
+      state.items[itemLane].pop(target)
+
+      const updated = JSON.stringify(state.items)
+      state.temp = updated
+      Cookies.set('wk', state.temp)
+    },
     initItem(state) {
       return state.items
     },

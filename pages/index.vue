@@ -28,11 +28,11 @@
       <h5>------issue</h5>
 
       <h5>------done</h5>
-      <p v-for="(item, index) in done" v-bind:key="index">{{ item.text }} </p>
+      <p v-for="item in done" v-bind:key="item.id">{{ item.text }} </p>
       <h5>------doing</h5>
-      <p v-for="(item, index) in doing" v-bind:key="index">{{ item.text }} </p>
+      <p v-for="item in doing" v-bind:key="item.id">{{ item.text }} </p>
       <h5>------done</h5>
-      <p v-for="(item, index) in todo"  v-bind:key="index">{{ item.text }} </p>
+      <p v-for="item in todo"  v-bind:key="item.id">{{ item.text }} </p>
     </div>
   </div>
 </template>
